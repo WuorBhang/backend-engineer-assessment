@@ -1,52 +1,45 @@
-# Backend Assessment - Auction API
+# Auction API - Django REST Framework
 
-## Objective
+## Setup Instructions
 
-Build a RESTful API for a simple Auction System.
+1. Clone the repository
+2. Create and activate virtual environment:
 
----
-
-## Requirements
-
-- User registration and authentication.
-- Users can create auctions:
-  - Title
-  - Description
-  - Starting price
-  - Auction start and end time
-- Users can bid on open auctions.
-- Highest bid wins after the auction ends.
-- Admin can view and delete auctions.
-  
----
-
-## Technical Specifications
-
-- Django 4.x + Django REST Framework
-- SQLite or PostgreSQL
-- JWT Authentication 
-- Django models and migrations
-- Secure all endpoints appropriately
-- Unit tests for core functionality
-- API documentation (Swagger/OpenAPI preferred)
-
----
-
-## Bonus Points
-
-- Background task to automatically close auctions (e.g., Celery).
-- Dockerize the application.
-
----
-
-## Expected Deliverables
-
-- Working Django project
-- Clear setup instructions (`README.md`)
-- API Documentation
-
----
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/Mac
+   venv\Scripts\activate     # Windows
 
 
+   ```
 
-`
+3. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+
+   ```
+
+4. Run migrations:
+
+   ```bash
+   python manage.py migrate
+
+   ```
+
+5. Create superuser:
+
+   ```bash
+   python manage.py createsuperuser
+
+   ```
+
+6. Run development server:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+## API Documentation
+
+Access Swagger docs at `http://localhost:8000/swagger/` after starting server
