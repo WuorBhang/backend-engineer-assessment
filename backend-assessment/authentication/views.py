@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
 from .serializers import RegisterSerializer, UserSerializer
@@ -18,7 +18,7 @@ class RegisterView(generics.CreateAPIView):
         return Response({
             "user": RegisterSerializer(user, context=self.get_serializer_context()).data,
             "message": "User created successfully",
-        })
+        }, status=status.HTTP_201_CREATED)
 
 class LoginView(TokenObtainPairView):
     serializer_class = UserSerializer
